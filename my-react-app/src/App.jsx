@@ -231,26 +231,21 @@ function GlassHeader({ name, setName }) {
           <div className="logo">ZA</div>
           <div className="brand__text">
             <div className="brand__title">Zaman AI</div>
-            <div className="brand__subtitle">
-              Голосовой / текстовый ассистент
-            </div>
           </div>
         </div>
         <div className="header__controls">
-          <Label className="label label--muted">Имя</Label>
-          <Input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="input input--sm w-36"
-            placeholder="Гость"
-          />
+          <div className="Sign_in">
+            <h4>Log in </h4>
+            <h4> / </h4>
+            <h4>Sign up</h4>
+          </div>
         </div>
       </div>
     </header>
   );
 }
 // Hero section
-function Hero({ name }) {
+function Hero() {
   return (
     <section className="section hero">
       <div className="hero__bg" />
@@ -264,8 +259,8 @@ function Hero({ name }) {
               Банкинг будущего: говорите — ассистент делает
             </h1>
             <p className="lead">
-              {name ? `${name}, ` : ""}персональные цели, халяль‑продукты, умная
-              экономия и визуализация мечт — на одной странице.
+              Персональные цели, халяль‑продукты, умная экономия и визуализация
+              мечт — на одной странице.
             </p>
             <div className="row gap-sm">
               <a href="#chat">
@@ -314,8 +309,7 @@ function Hero({ name }) {
   );
 }
 
- // Chat section , the most important here!!!
-
+// Chat section , the most important here!!!
 
 function Chat() {
   const { messages, ask } = useBrain();
@@ -384,7 +378,7 @@ function Chat() {
     </section>
   );
 }
- // Financial goals section
+// Financial goals section
 function Goals() {
   const [goalName, setName] = useState("Квартира");
   const [target, setTarget] = useState(30000000);
@@ -506,7 +500,7 @@ function Goals() {
     </section>
   );
 }
- //   Peer comparison section
+//   Peer comparison section
 function PeerCompare() {
   const my = { food: 28, mobility: 15, leisure: 12, bills: 25, other: 20 };
   const peers = { food: 22, mobility: 12, leisure: 10, bills: 26, other: 30 };
@@ -771,11 +765,10 @@ function Islamic() {
 
 // ===================== ROOT =====================
 export default function App() {
-  const [name, setName] = useState("Гость");
   return (
     <div className="app">
-      <GlassHeader name={name} setName={setName} />
-      <Hero name={name} />
+      <GlassHeader />
+      <Hero />
       <main>
         <Chat />
         <Goals />

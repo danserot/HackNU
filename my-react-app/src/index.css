@@ -34,9 +34,11 @@
 * {
   box-sizing: border-box;
 }
+/* Add smooth scrolling */
 html,
 body,
 #root {
+  scroll-behavior: smooth;
   height: 100%;
 }
 body {
@@ -201,6 +203,7 @@ img {
   left: 0;
   right: 0;
   z-index: 50;
+  height: 4.5em;
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid rgba(229, 231, 235, 0.7);
@@ -230,16 +233,30 @@ img {
 }
 .brand__title {
   font-weight: 600;
+  font-size: large;
 }
-.brand__subtitle {
-  font-size: 0.75rem;
-  color: var(--muted);
-}
+
 .header__controls {
   display: none;
   gap: 0.5rem;
   align-items: center;
 }
+
+/* Sign in styles */
+.Sign_in {
+  display: flex;
+  flex-direction: row;
+}
+.Sign_in h4 {
+  margin: 0 0.2rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.Sign_in h4:hover {
+  color: var(--emerald-600);
+}
+
 @media (min-width: 768px) {
   .header__controls {
     display: flex;
