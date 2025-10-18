@@ -40,6 +40,8 @@ body,
 #root {
   scroll-behavior: smooth;
   height: 100%;
+  caret-color: transparent; /* скрывает саму мигающую палочку */
+  cursor: default;
 }
 body {
   margin: 0;
@@ -147,8 +149,11 @@ img {
 .p-5 {
   padding: 1.25rem;
 }
+.padding {
+  padding-top: 5px;
+}
 .p-6 {
-  padding: 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 /* ======= Typography ======= */
@@ -266,6 +271,11 @@ img {
   padding-top: 6.5rem;
   overflow: hidden;
 }
+.micro {
+  font-size: 20px;
+  margin-right: 8px;
+  font-weight: thin;
+}
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -313,6 +323,7 @@ img {
 
 /* ======= Card ======= */
 .card {
+  
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius-xl);

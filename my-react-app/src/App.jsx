@@ -6,6 +6,7 @@ import React, {
   createContext,
   useContext,
 } from "react";
+import { FaMicrophone } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "./index.css";
 
@@ -280,9 +281,11 @@ function Hero() {
                 { k: "целей", v: "12" },
               ].map((x) => (
                 <Card key={x.k} className="card card--pill">
-                  <CardContent className="p-3">
-                    <div className="muted text-xs">{x.k}</div>
-                    <div className="text-lg strong">{x.v}</div>
+                  <CardContent>
+                    <div className=" p-3">
+                      <div className="muted text-xs .">{x.k}</div>
+                      <div className="text-lg strong">{x.v}</div>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -341,7 +344,7 @@ function Chat() {
             Демо: локальная логика + точки интеграции с LLM
           </div>
         </div>
-        <Card className="card card--overflow">
+        <Card className="card card--overflow mt-4">
           <CardContent className="p-0">
             <div className="chat">
               {messages.map((m, i) => (
@@ -364,8 +367,8 @@ function Chat() {
             </div>
             <div className="divider" />
             <div className="row gap-sm p-3">
-              <Button variant="outline" onClick={start}>
-                {isListening ? "Слушаю…" : "🎤 Диктовка"}
+              <Button variant="outline" className="micro" onClick={start}>
+                {isListening ? "Слушаю…" : <FaMicrophone />}
               </Button>
               <Input
                 value={input}
