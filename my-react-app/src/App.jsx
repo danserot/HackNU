@@ -7,7 +7,7 @@ import React, {
   useContext,
 } from "react";
 import { motion } from "framer-motion";
-import "./index.css"; // <-- plain CSS (no Tailwind)
+import "./index.css";
 
 // ===== Lightweight UI kit (no external deps) =====
 const cx = (...cls) => cls.filter(Boolean).join(" ");
@@ -228,7 +228,10 @@ function GlassHeader({ name, setName }) {
     <header className="header">
       <div className="container header__inner">
         <div className="header__brand">
-          <div className="logo">ZA</div>
+          <div className="logo">
+            <img src="./images/logo.png" alt="Logo" />
+          </div>
+
           <div className="brand__text">
             <div className="brand__title">Zaman AI</div>
           </div>
